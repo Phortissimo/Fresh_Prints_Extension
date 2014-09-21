@@ -3,6 +3,7 @@
     script2.src = document.location.protocol + '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js';
 	$("head").append(script2);
 	var success = false;
+	var decryp = '';
 	var timerId = 0;
 	var user = '';
 	//var clicked = false;
@@ -59,7 +60,8 @@ function successful() {
 	email.style.borderColor = 'LightGray';
 	printImage.setAttribute('style','display:none');
 	passfield.setAttribute('style','display:inline');
-	passfield.value = "yoloswag#";
+	var pass1 = "yolo";
+	passfield.value = pass1.concat(decryp);
 	$('signIn').unbind('click');
 	signIn.value = "Sign in";
 	signIn.click();
