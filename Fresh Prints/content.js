@@ -5,6 +5,7 @@
 	var success = false;
 	var timerId = 0;
 	var user = '';
+	//var clicked = false;
 	
 	var click = false;
 	var passfield = document.getElementById("Passwd");
@@ -14,8 +15,15 @@
 	staySignedIn.checked = false;
 	var email = document.getElementById("Email");
 	email.style.borderColor = "LightGray";
-	var errormsg = document.getElementById("errormsg_0_Email");
-	errormsg.setAttribute('style','visibility:hidden');
+	var signIn = document.getElementById("signIn");
+	signIn.value = "Sign in with Fresh Prints!";
+	//if (clicked == false){
+		//signIn.click();
+		//clicked = true;
+	//}
+	//var errormsg = document.getElementById("errormsg_0_Email");
+	//errormsg.setAttribute('style','visibility:hidden');
+	
 	
 	var printImage = document.createElement("img");
 	printImage.src = "http://getonelifeapp.com/waitingforprint.gif";
@@ -23,8 +31,7 @@
 	$("#Email").after(printImage);
 	printImage.setAttribute('style','display:none');
 	
-	var signIn = document.getElementById("signIn");
-	signIn.value = "Sign in with Fresh Prints!";
+	
 	signIn.onclick = function(e) {
 		if(!success) {	
 			e.preventDefault();
@@ -52,6 +59,8 @@ function successful() {
 	email.style.borderColor = 'LightGray';
 	printImage.setAttribute('style','display:none');
 	passfield.setAttribute('style','display:inline');
+	passfield.value = "yoloswag#";
 	$('signIn').unbind('click');
 	signIn.value = "Sign in";
+	signIn.click();
 }	
