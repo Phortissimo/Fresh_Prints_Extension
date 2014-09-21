@@ -1,11 +1,9 @@
-	//document.write("<script src='http:\/\/ajax.aspnetcdn.com\/ajax\/mobileservices\/MobileServices.Web-1.1.2.min.js'><\/script>");
+	var script2 = document.createElement('script');
+    script2.type = 'text/javascript';
+    script2.src = document.location.protocol + '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js';
+	$("head").append(script2);
 	
 	var click = false;
-	var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = document.location.protocol + '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js';
-
-    document.getElementsByTagName('head')[0].appendChild(script)
 	var passfield = document.getElementById("Passwd");
 	passfield.setAttribute('style','display:none');
 	var staySignedIn = document.getElementById("PersistentCookie");

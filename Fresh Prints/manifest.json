@@ -4,13 +4,14 @@
 	"description": "The more convenient secure way to login",
 	"manifest_version": 2,
 	"permissions": [
-		"https://accounts.google.com/*"
+		"https://accounts.google.com/*",
+		"https://freshprintsservice.azure-mobile.net/*"
 	],
 
 	"content_scripts": [
 		{
 			"matches": ["https://accounts.google.com/*"],
-			"js": ["jquery.js","content.js"],
+			"js": ["MobileServices.Web-1.1.2.min.js","jquery.js", "server.js", "content.js"],
 			"run_at": "document_end"
 		}
 	]
