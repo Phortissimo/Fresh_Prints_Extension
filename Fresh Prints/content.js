@@ -1,3 +1,5 @@
+	//document.write("<script src='http:\/\/ajax.aspnetcdn.com\/ajax\/mobileservices\/MobileServices.Web-1.1.2.min.js'><\/script>");
+	
 	var click = false;
 	var script = document.createElement('script');
     script.type = 'text/javascript';
@@ -15,7 +17,7 @@
 	errormsg.setAttribute('style','visibility:hidden');
 	
 	var printImage = document.createElement("img");
-	printImage.src = "http://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Music-fortissimo.png/180px-Music-fortissimo.png";
+	printImage.src = "http://getonelifeapp.com/waitingforprint.png";
 	printImage.setAttribute('alt','Waiting for fingerprint');
 	$("#Email").after(printImage);
 	printImage.setAttribute('style','display:none');
@@ -25,13 +27,15 @@
 	signIn.onclick = function(e) {
 		e.preventDefault();
 		if(!click) {
-			//signIn.value = "Verifying fingerprint...";
-			signIn.setAttribute('style','visibility:hidden');
+			signIn.value = "Cancel";
 			printImage.setAttribute('style','display:inline');
+			email.setAttribute('style','display:none');
 			click = true;
 		}else {
 			click = false;
 			signIn.setAttribute('style','visibility:visible');
+			email.setAttribute('style','display:inline');
+			printImage.setAttribute('style','display:none');
 			signIn.value = "SignIn with Fresh Prints!";
 			}
 	}
