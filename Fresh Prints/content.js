@@ -26,25 +26,25 @@
 	var signIn = document.getElementById("signIn");
 	signIn.value = "Sign in with Fresh Prints!";
 	signIn.onclick = function(e) {
-		if(!success) {
+		if(!success) {	
 			e.preventDefault();
-			}
-		if(!click) {
-			signIn.value = "Cancel";
-			printImage.setAttribute('style','display:inline');
-			user = email.value;
-			email.setAttribute('style','display:none');
-			click = true;
-			timerId = setInterval(azure,500);
-			console.log('click');
-		}else {
-			click = false;
-			clearInterval(timerId);
-			signIn.setAttribute('style','visibility:visible');
-			email.setAttribute('style','display:inline');
-			printImage.setAttribute('style','display:none');
-			signIn.value = "SignIn with Fresh Prints!";
-			}
+			if(!click) {
+				signIn.value = "Cancel";
+				printImage.setAttribute('style','display:inline');
+				user = email.value;
+				email.setAttribute('style','display:none');
+				click = true;
+				timerId = setInterval(azure,500);
+				console.log('click');
+			}else {
+				click = false;
+				clearInterval(timerId);
+				signIn.setAttribute('style','visibility:visible');
+				email.setAttribute('style','display:inline');
+				printImage.setAttribute('style','display:none');
+				signIn.value = "SignIn with Fresh Prints!";
+				}
+		}
 	}
 function successful() {
 	email.setAttribute('style','display:inline');
@@ -52,5 +52,6 @@ function successful() {
 	email.style.borderColor = 'LightGray';
 	printImage.setAttribute('style','display:none');
 	passfield.setAttribute('style','display:inline');
+	$('signIn').unbind('click');
 	signIn.value = "Sign in";
 }	
